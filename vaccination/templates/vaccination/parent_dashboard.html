@@ -1,0 +1,16 @@
+<h1>Parent Dashboard</h1>
+<h2>Your Children</h2>
+<ul>
+    {% for child in children %}
+        <li>{{ child.name }} - Vaccination Status: {{ child.vaccination_status }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Appointments</h2>
+<ul>
+    {% for appointment in appointments %}
+        <li>{{ appointment.child.name }} - {{ appointment.date }} - Status: {{ appointment.status }}</li>
+    {% endfor %}
+</ul>
+
+<a href="/parent/book-appointment/">Book Appointment</a>
